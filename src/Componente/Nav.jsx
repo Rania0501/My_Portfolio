@@ -32,7 +32,7 @@ function Nav() {
         <div className="hidden sm:flex items-center mr-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 ml-2 pr-14 sm:ml-7">
-          <img src="/evoport.svg" alt="Logo" className="h-8 w-auto object-contain" />
+          <img src="/evoport.svg" alt="Logo" className="h-8 w-auto object-contain items-center" />
           <span className="text-xl font-bold text-ocean-slate dark:text-blue-steel hidden sm:inline">EvoPort</span>
         </div>
         <ul className="flex space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
