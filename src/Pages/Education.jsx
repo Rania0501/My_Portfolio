@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-const TimelineSection = ({ id,title, data, forceSide }) => {
-  const [isClicked, setIsClicked] = useState(null);
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
+const TimelineSection = ({ id, title, data, forceSide }) => {
   return (
-    <div id={id}  className="relative w-full max-w-6xl mx-auto py-10 px-3 sm:px-6">
-      <p className="text-sm sm:text-md text-gray-500 dark:text-gray-300 text-center">Here's My</p>
-      <h1 className="text-xl sm:text-2xl lg:text-2xl text-blue-steel text-center font-bold pb-16">
+    <div
+      id={id}
+      className="relative w-full max-w-6xl mx-auto py-10 px-3 sm:px-6"
+    >
+      <p className="text-sm sm:text-md text-gray-500 dark:text-gray-300 text-center">
+        Here's My
+      </p>
+      <h2 className="text-xl sm:text-2xl lg:text-2xl text-blue-steel text-center font-bold mb-16">
         {title}
-      </h1>
-        
+      </h2>
+
       {/* Ligne verticale */}
       <div className="absolute left-1/2 transform -translate-x-1/2 top-28 bottom-0 border-l-2 border-steel-sky dark:border-gray-600 hidden sm:block"></div>
 
@@ -35,11 +39,9 @@ const TimelineSection = ({ id,title, data, forceSide }) => {
             {/* Carte */}
             <div className="w-full sm:w-1/2 px-3 sm:px-8">
               <div
-              
-                className="bg-white dark:bg-gray-800 shadow-md 
+                className="relative group bg-white dark:bg-gray-800 shadow-md 
                   p-4 sm:p-6 rounded-lg sm:rounded-xl transition-all duration-500 cursor-pointer
                   text-xs sm:text-sm"
-                
               >
                 <h3 className="text-sm sm:text-lg font-bold text-gray-800 dark:text-white">
                   {item.title}
@@ -50,6 +52,25 @@ const TimelineSection = ({ id,title, data, forceSide }) => {
                 <p className="mt-2 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   {item.description}
                 </p>
+
+                {/* Lien certificat */}
+                {item.certificate && (
+                  <span className="text-blue-600 dark:text-blue-400 underline text-xs sm:text-sm cursor-pointer">
+                    Voir certificat
+                  </span>
+                )}
+
+                {/* Tooltip Image (hover sur toute la card) */}
+                {item.certificate && (
+                  <div className="absolute hidden group-hover:block top-full mt-2 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-700 p-2 rounded-lg shadow-lg z-30">
+                    <LazyLoadImage
+                      src={item.certificate}
+                      alt="Certificat"
+                      className="w-64 h-auto rounded"
+                      effect="blur"
+                    />
+                  </div>
+                )}
               </div>
             </div>
 
@@ -73,17 +94,21 @@ const EducationAndCertificates = ({id} ) => {
       subtitle: "BAC+2",
       date: "Sep 2022 - Jun 2024",
       description: "Internship in digital development at ISIMCOTIC TANGER.",
-      icon: <img src="/OFPPT.svg" alt="" />,
+      icon: <img src="./OFPPT.svg" alt="" />,
+      certificate: "./bac+2.jpeg",
     },
+
     {
       id: 2,
       side: "right",
-      title: "Faculty of Sciences Fes",
-      subtitle: "Bachelor's Degree",
-      date: "Sep 2021 - Jun 2024",
-      description: "Studied PC at Lyceeelmahdi el manjra in Tanger.",
-      icon: <img src="/lycee.png" alt="" />,
+      title: "El Mahdi El Manjra High School - Tangier",
+      subtitle: "Baccalaureate in Physical and Chemical Sciences",
+      date: "Sep 2021 - Jun 2022",
+      description: "Obtained the Baccalaureate in Physical Sciences at El Mahdi El Manjra High School in Tangier.",
+      icon: <img src="./lycee.png" alt="High School" />,
+      certificate: "./bac.jpeg",
     },
+    
   ];
 
   const certificateData = [
@@ -95,8 +120,10 @@ const EducationAndCertificates = ({id} ) => {
       date: "Jan 13, 2025",
       description:
         "Intro to Python programming, control structures, data types, functions, and modules.",
-      icon: <img src="/cisco-networking-academy.svg" alt="" />,
+      icon: <img src="./cisco-networking-academy.svg" alt="" />,
+      certificate: "./certificate-cisco.jpeg",
     },
+
     {
       id: 2,
       side: "right",
@@ -105,7 +132,8 @@ const EducationAndCertificates = ({id} ) => {
       date: "Mar 29, 2025",
       description:
         "Soft skills: professional communication, time management, teamwork, and climate change awareness.",
-      icon: <img src="/efe.png" alt="" />,
+      icon: <img src="./efe.png" alt="" />,
+      certificate: "./certificate-efe.jpeg", // <-- lien vers capture écran
     },
   ];
 

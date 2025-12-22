@@ -92,13 +92,13 @@ function Contact({id}) {
   id="name"
   type="text"
   name="name"
-  className="mt-1 block w-full border-2 border-gray-300 p-2 dark:bg-gray-900 dark:border-blue-steel
-   rounded-lg
-   focus:outline-none focus:ring-0
-   focus:rounded-lg
-   focus:border-transparent
-   focus:border-[3px] focus:[border-image:linear-gradient(to_right,#3F6E8C,#87A3B5,#c9d8e1e7)_1]
-   dark:focus:bg-gray-900"
+  className="mt-1 block w-full border-2 border-gray-300 p-2 
+             bg-transparent dark:bg-transparent
+             rounded-lg
+             focus:outline-none focus:ring-0
+             focus:rounded-lg
+             focus:border-transparent
+             focus:border-[3px] focus:[border-image:linear-gradient(to_right,#3F6E8C,#87A3B5,#c9d8e1e7)_1]"
   placeholder="Your Name"
 />
 
@@ -123,24 +123,19 @@ function Contact({id}) {
 
         {/* Subject */}
         <div>
-          <select
+          <input
             id="subject"
+            type="text"
             name="subject"
-            className="mt-1 block w-full rounded-lg border-2 border-gray-300 p-2 dark:bg-gray-900 dark:text-gray-400 dark:border-blue-steel
+            className="mt-1 block w-full rounded-lg border-2 border-gray-300 p-2 dark:bg-gray-900 dark:border-blue-steel
    focus:outline-none focus:ring-0 
-   
    focus:border-transparent
     dark:focus:bg-gray-900
    focus:border-[3px] focus:border-transparent focus:[border-image:linear-gradient(to_right,#3F6E8C,#87A3B5,#c9d8e1e7)_1]"
-          >
-            <option value="" className="dark:text-gray-300 dark:hover:bg-blue-steel">Select a subject</option>
-            <option value="info" className="dark:text-gray-300 dark:hover:bg-blue-steel">Request for information</option>
-            <option value="support" className="dark:text-gray-300 dark:hover:bg-blue-steel">Technical support</option>
-            <option value="collaboration" className="dark:text-gray-300 dark:hover:bg-blue-steel">Collaboration proposal</option>
-          </select>
+            placeholder="Your subject"
+          />
           <ValidationError prefix="Subject" field="subject" errors={state.errors} />
         </div>
-
         {/* Message */}
         <div>
           <textarea

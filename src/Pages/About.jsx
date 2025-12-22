@@ -15,6 +15,8 @@ export default function About({id}) {
     
     return (
       <section id={id} className="relative mx-auto max-w-7xl px-4 py-12 md:py-16">
+          <div className="hidden dark:block absolute -top-50 -left-200 w-80 h-80 rounded-full bg-blue-300 opacity-30 blur-3xl"></div>
+          <div className="hidden dark:block absolute -top-50 -left-200 w-80 h-80 rounded-full bg-blue-400 opacity-30 blur-3xl"></div>
         <div className="flex flex-col md:grid md:grid-cols-2 items-center gap-10">
           
           {/* TITLE */}

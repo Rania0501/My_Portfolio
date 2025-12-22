@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Nav from "../Componente/Nav";
-import CV from"../assets/FELLOUS EHSAIN Rania_CV.pdf";
+import CV from"../assets/CV.FELLOUS EHSAIN Rania.pdf";
 import developerImage from "../assets/Développeuse Full-Stack au Bureau (1).png"
 const About = lazy(() => import("./About"));
 const Services = lazy(() => import("./Services"));
@@ -50,8 +50,9 @@ const Home = ({id} ) => {
         {/* Texte à gauche */}
         <div className="w-full md:w-1/2 text-left space-y-6 ml-10">
          {/* Cercle lumineux uniquement en dark */}
+  <div className="hidden dark:block absolute -top-20 -left-10 w-80 h-80 rounded-full bg-blue-300 opacity-30 blur-3xl"></div>
   <div className="hidden dark:block absolute -top-20 -left-10 w-80 h-80 rounded-full bg-blue-400 opacity-30 blur-3xl"></div>
-        <p className="font-bold  text-2xl text-gray-500 dark:text-gray-300">Hi,I am Rania</p>
+        <p className="font-bold  text-2xl text-gray-500 dark:text-gray-100">Hi,I am Rania</p>
         <h1 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-ocean-slate via-steel-sky to-peach-cream bg-clip-text text-transparent h-20">
         {displayedText.split("\n").map((line, index) => (
     <span key={index}>
@@ -62,7 +63,7 @@ const Home = ({id} ) => {
       <span className="animate-pulse">|</span>
     </h1>
 
-          <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl">
+          <p className="text-gray-700 dark:text-gray-100 text-lg md:text-xl">
           <span className="font-bold text-midnight-slate dark:text-blue-steel">I'm a creative developer</span> - passionate about modern web development and user-focused design.
           </p>
 
@@ -73,7 +74,7 @@ const Home = ({id} ) => {
               {/* Bouton de téléchargement du CV */}
           <a
             href={CV}
-            download="CV-FELLOUS EHSAIN Rania.pdf"
+            download="CV.FELLOUS EHSAIN Rania.pdf"
             className="inline-flex items-center gap-2 px-3 py-2 rounded-full border-2 border-blue-steel text-blue-steel hover:text-white hover:bg-gradient-to-r hover:from-blue-steel hover:to-steel-sky hover:shadow-lg hover:shadow-blue-steel transition-all duration-300"
 
           >
@@ -99,15 +100,6 @@ const Home = ({id} ) => {
   <FaLinkedin size={20} />
 </a>
 
-<a
-  href="https://yourwebsite.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Portfolio"
-  className="w-10 h-10 flex items-center justify-center border rounded-full border-ocean-slate text-ocean-slate hover:bg-gradient-to-r hover:from-blue-steel hover:to-steel-sky hover:shadow-md hover:shadow-blue-steel hover:text-white transition-all duration-300"
->
-  <FaGlobe size={20} />
-</a>
 
           </div>
 
@@ -115,7 +107,7 @@ const Home = ({id} ) => {
           <div className="mt-6">
             <Link
               to="/projects"
-              className="underline text-ocean-slate hover:text-blue-muted transition"
+              className="underline text-ocean-slate hover:text-blue-muted dark:text-blue-steel transition"
             >
               See My Projects →
             </Link>

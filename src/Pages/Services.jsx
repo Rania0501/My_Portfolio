@@ -26,8 +26,9 @@ function Services({id} ) {
     <section id={id} className="py-12 bg-gradient-to-br from-[#3b618010] via-[#3b618010] to-[#ffe7d637]">
       <div className="max-w-6xl mx-auto px-6">
       <p className="text-md text-gray-500 dark:text-gray-300 text-center">What I Do</p>
-      <h1 className="text-2xl text-blue-steel text-center font-bold pb-12">
+      <h1 className="relative text-2xl text-blue-steel text-center font-bold mb-12">
        Services
+       <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-steel via-steel-sky to-peach-cream rounded"></span>
       </h1>
       <div className="grid md:grid-cols-3 gap-8 ">
   {services.map((service, index) => (

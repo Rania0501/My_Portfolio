@@ -38,10 +38,10 @@ const Skills = ({id} ) => {
   return (
     <div id={id}  className="relative w-full max-w-5xl mx-auto py-20 px-5">
       <p className="text-md text-gray-500 text-center">Here's My</p>
-      <h1 className="text-2xl text-blue-steel text-center font-bold pb-12">
+      <h1 className="relative text-2xl text-blue-steel text-center font-bold mb-12">
         Skills
-        
-      </h1>
+        <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-steel via-steel-sky to-peach-cream rounded"></span>
+        </h1>
 
      <Swiper
   modules={[Pagination, Autoplay]}

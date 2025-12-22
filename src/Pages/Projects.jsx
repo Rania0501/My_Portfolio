@@ -15,7 +15,7 @@ const Projects = ({ id }) => {
         { label: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-500" /> },
         { label: "Chart.js", icon: <FaChartLine className="text-green-500" /> },
       ],
-      img: "/Cozy-Suits.jpg",
+      img: "./Cozy-Suits.jpg",
       bg: "bg-gradient-to-r from-[#aa7f19] via-[#c5973f] to-[#e6be73]",
     },
     {
@@ -29,7 +29,7 @@ const Projects = ({ id }) => {
         { label: "Vite", icon: <FaBolt className="text-yellow-400" /> },
         { label: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-500" /> },
       ],
-      img: "/AFPH.jpg",
+      img: "./AFPH.jpg",
       bg: "bg-gradient-to-r from-[#4d8ca8] via-[#70a9c5] to-[#a0cde2]",
     },
     {
@@ -43,7 +43,7 @@ const Projects = ({ id }) => {
         { label: "Chart.js", icon: <FaChartLine className="text-green-500" /> },
         { label: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
       ],
-      img: "/Ecommerce-Dashboard.png",
+      img: "./Ecommerce-Dashboard.png",
       bg: "bg-gradient-to-r from-[#6d86a0] to-[#b3c3d1]",
     },
   ];
@@ -53,9 +53,10 @@ const Projects = ({ id }) => {
     <section id={id} className="py-16 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-60">
     {/* Title */}
     <p className="text-md text-gray-500 dark:text-gray-300 text-center">Here's My</p>
-    <h1 className="text-xl md:text-2xl text-blue-steel text-center font-bold pb-12">
+    <h1 className="relative text-xl md:text-2xl text-blue-steel text-center font-bold mb-12">
       Projects
-    </h1>
+      <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-steel via-steel-sky to-peach-cream rounded"></span>
+      </h1>
   
     <div className="space-y-10">
       {projects.map((project) => (

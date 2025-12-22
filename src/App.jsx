@@ -1,7 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy, useState, useEffect } from "react";
-
-
 
 // Lazy load des pages
 const Home = lazy(() => import("./Pages/Home"));
@@ -11,6 +9,7 @@ const Skills = lazy(() => import("./Pages/Skills"));
 const Contact = lazy(() => import("./Pages/Contact"));
 const Education = lazy(() => import("./Pages/Education"));
 const Services = lazy(() => import("./Pages/Services"));
+
 const App = () => {
   // Loader state
   const [loading, setLoading] = useState(true);
@@ -25,62 +24,52 @@ const App = () => {
             setLoading(false);
             return 100;
           }
-          return prev + 1; // augmente de 1% toutes les 300ms
+          return prev + 1;
         });
-      }, 80); // vitesse (ici 30ms => environ 3 secondes pour 100%)
+      }, 80);
     }
   }, [loading]);
 
-  // Si on est encore en chargement => affiche ton loader
+  // Loader affiché tant que ça charge
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-white">
+      <div className="flex items-center justify-center h-screen bg-white -mt-8">
         <div className="flex flex-col items-center space-y-7">
-          {/* Logo with shadow */}
           <img
-            src="/evoport.svg"
+            src="./evoport.svg"
             alt="Evoport Logo"
-            className="w-24 h-24 drop-shadow-2xl animate-pulse -mb-8"
+            className="flex h-16 drop-shadow-2xl justify-center animate-pulse -mb-6"
           />
-{/* Loading text */}
-<div className="text-lg justify-center text-gray-700">
-            EvoPort
-          </div>
-          {/* Loading text */}
-          <div className="text-xl font-semibold text-gray-700">
-            Loading... {progress}%
-          </div>
-
-          {/* Progress bar */}
-          <div className="w-64 h-2 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+          <div className="text-lg text-gray-700">EvoPort</div>
+          <div className="w-48 h-1 bg-gray-200 rounded-full overflow-hidden shadow-inner">
             <div
               className="h-full bg-gradient-to-r from-blue-steel via-steel-sky to-peach-cream transition-all duration-500"
               style={{ width: `${progress}%` }}
             />
           </div>
+          <div className="text-md font-semibold text-gray-700">
+            Loading... {progress}%
+          </div>
+          
         </div>
       </div>
     );
   }
 
-  // Sinon => affiche ton site normalement
+  // Routes principales
   return (
-    <Router>
-
-     
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services/>} />
-        </Routes>
-
-    </Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/education" element={<Education />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+    </Suspense>
   );
 };
 
 export default App;
-
