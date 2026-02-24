@@ -108,6 +108,16 @@ const EducationAndCertificates = ({id} ) => {
       icon: <img src="./lycee.png" alt="High School" />,
       certificate: "./bac.jpeg",
     },
+    {
+      id: 3,
+      side: "left",
+      title: "Jobintech x Inovadex",
+      subtitle: "Power BI / Data Analytics",
+      date: "Sep 2025 - Jan 2026",
+      description: "training in Data Analytics and Power BI (reporting, dashboards, KPIs, data modeling).",
+      icon: <img src="./jobintech.png" alt="" />,
+      certificate: "./powerbi.jpeg",
+    },
     
   ];
 

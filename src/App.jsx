@@ -40,7 +40,7 @@ const App = () => {
             alt="Evoport Logo"
             className="flex h-16 drop-shadow-2xl justify-center animate-pulse -mb-6"
           />
-          <div className="text-lg text-gray-700">EvoPort</div>
+          <div className="text-lg text-gray-500"><b> EvoPort </b></div>
           <div className="w-48 h-1 bg-gray-200 rounded-full overflow-hidden shadow-inner">
             <div
               className="h-full bg-gradient-to-r from-blue-steel via-steel-sky to-peach-cream transition-all duration-500"

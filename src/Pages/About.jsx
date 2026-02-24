@@ -4,7 +4,7 @@ export default function About({id}) {
     const infos=[
         {
             name:"FELLOUS EHSAIN Rania",
-            age:"20",
+            age:"21",
             email:"raniafellousehsai@gmail.com",
             adress:"Tanger",
             phone:"+212 638 780 274"

@@ -16,9 +16,9 @@ function Services({id} ) {
       description: "I design intuitive interfaces and attractive user experiences with Figma and Tailwind CSS."
     },
     {
-      icon: <img src="serveur.png" alt="" size={10}/>,
-      title: "Hosting & Deployment",
-      description: "I deploy websites and applications using GitHub, Cloud services, and AWS, with regular maintenance and updates."
+      icon: <img src="serveur.png" alt="" size={10} />,
+      title: "Data Analytics",
+      description: "I analyze data, build dashboards, track KPIs, and turn raw data into actionable insights to support better business decisions."
     },
   ];
 

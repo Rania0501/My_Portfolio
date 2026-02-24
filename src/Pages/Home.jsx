@@ -14,10 +14,11 @@ const Projects = lazy(() => import("./Projects"));
 const Skills = lazy(() => import("./Skills"));
 const Contact = lazy(() => import("./Contact"));
 const titles = [
- 'Front-End\nDeveloper',
+  "Front-End\nDeveloper",
   "Back-End\nDeveloper",
   "Full-Stack\nWeb Developer",
   "UI/UX\nDesigner",
+  "Data Analytics"
 ];
 const Home = ({id} ) => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -64,7 +65,7 @@ const Home = ({id} ) => {
     </h1>
 
           <p className="text-gray-700 dark:text-gray-100 text-lg md:text-xl">
-          <span className="font-bold text-midnight-slate dark:text-blue-steel">I'm a creative developer</span> - passionate about modern web development and user-focused design.
+          <span className="font-bold text-midnight-slate dark:text-blue-steel">Creative developer</span> passionate about modern web development, data analytics, and user-focused design.
           </p>
 
         

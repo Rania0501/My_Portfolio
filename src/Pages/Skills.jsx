@@ -14,8 +14,10 @@ import {
   FaLaravel,
   FaGithub,
   FaGitAlt,
+  FaChartBar
 } from "react-icons/fa";
-import { SiMysql, SiMongodb, SiFigma, SiTailwindcss } from "react-icons/si";
+
+import { SiMysql, SiMongodb, SiFigma, SiTailwindcss} from "react-icons/si";
 
 const Skills = ({id} ) => {
   const dataSkils = [
@@ -33,6 +35,7 @@ const Skills = ({id} ) => {
     { id: 12, name: "Git", icon: <FaGitAlt size={30} /> },
     { id: 13, name: "Figma", icon: <SiFigma size={30} /> },
     { id: 14, name: "Tailwind", icon: <SiTailwindcss size={30} /> },
+    { id: 15, name: "Power BI", icon: <FaChartBar size={30} /> },
   ];
 
   return (
