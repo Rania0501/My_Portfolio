@@ -116,7 +116,7 @@ const EducationAndCertificates = ({id} ) => {
       date: "Sep 2025 - Jan 2026",
       description: "training in Data Analytics and Power BI (reporting, dashboards, KPIs, data modeling).",
       icon: <img src="./jobintech.png" alt="" />,
-      certificate: "./ATTESTATION MS Power BI.jpeg",
+      certificate: "./ATTESTATION Power BI.jpeg",
     },
     
   ];
